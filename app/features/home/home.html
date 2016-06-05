@@ -8,8 +8,8 @@
         <user-input></user-input> <!-- dyrektywa show pokazuje/wskazuje uzytkowniak z homeController-->
         <div ng-show="homeController.user">
             <div class="list-group">
-                <a href="" class="list-group-item" ng-click="homeController.selectedTab='user'">{{homeController.user}} jednego uzytkowniak</a>
-                <a href="" class="list-group-item" ng-click="homeController.selectedTab='all'">wszystko</a>
+                <a href="" class="list-group-item" ng-click="homeController.onuser">{{homeController.user}} jednego uzytkowniak</a>
+                <a href="" class="list-group-item" ng-click="homeController.onall">wszystkich uzytkownikow</a>
             </div>
             <!-- tylko jak nazwa uzytkownika jest zgodna wyszukuje-->
             <div ng-switch='homeController.selectedTab'>

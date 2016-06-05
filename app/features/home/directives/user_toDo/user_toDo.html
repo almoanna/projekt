@@ -1,1 +1,24 @@
-uzytkownik 
+ <!DOCTYPE html>
+ <html>
+     <head>
+         <meta charset="UTF-8">
+    </head>
+    <selection class="row">
+        <p><!-- uruchomic funkcjie gdy fromularz jest skladany ng-submit-->
+            <form id="toDo-from" ng-submit="homeController.addTodo()">
+                <input id="new" class="form-control" ng-model="homeController.userText" ng-disabled="saving"/>
+                
+            </form>
+        </p>
+        <selection>
+            <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+            <ul class="list-group">
+                <li ng-reapet="homeController.todos" class="list-group-item">
+                    <input data-toggle="toggle" type="checkbox" ng-model"todo.completed" ng-change="togleCompleted(todo)">
+                    <label ng-dblclick="edit(todo)">{{todo.title}}</label>
+                    <button class="destroy" ng-click="homeConroller.remove(todo)"></button>
+                </li>
+            </ul>
+        </selection>
+    </selection>
+ </html>
