@@ -1,11 +1,8 @@
 {
-  "homepage": "",
-  "bugs": {
-    "url": ""
-  },
-  "name": "workspace",
+  "homepage": "https://github.com/bslipek/angularcourse#readme",
+  "name": "q",
   "version": "1.0.0",
-  "description": "",
+  "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--,      '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'     -----------------------------------------------------------------",
   "main": "index.js",
   "scripts": {
     "start": "node node_modules/.bin/webpack-dev-server --host=0.0.0.0 --content-base app"
@@ -36,5 +33,8 @@
     "angularfire": "^1.2.0",
     "bootstrap": "^3.3.6",
     "firebase": "^2.4.2"
+  },
+  "bugs": {
+    "url": "https://github.com/bslipek/angularcourse/issues"
   }
 }

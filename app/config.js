@@ -1,4 +1,4 @@
-export default function routing($urlRouterProvide, $locationProvider){
-    $locationProvider.html15Mode(false);
-    $urlRouterProvide.otherwise('/');
-}
+export default function routing($urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(false);
+  $urlRouterProvider.otherwise('/');
+} 

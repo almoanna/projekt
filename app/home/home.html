@@ -1,15 +1,9 @@
- <!DOCTYPE html>
-<html>
-    <head>
-         <meta charset="UTF-8">
-    </head>
-    
-    <div>
-        <user-input></user-input> <!-- dyrektywa show pokazuje/wskazuje uzytkowniak z homeController-->
+ <div>
+       <user-input></user-input> <!-- dyrektywa show pokazuje/wskazuje uzytkowniak z homeController-->
         <div ng-show="homeController.user">
             <div class="list-group">
-                <a href="" class="list-group-item" ng-click="homeController.onuser">{{homeController.user}} jednego uzytkowniak</a>
-                <a href="" class="list-group-item" ng-click="homeController.onall">wszystkich uzytkownikow</a>
+                <a href="" class="list-group-item" ng-click="homeController.onUser'">{{homeController.user}} jednego uzytkowniak</a>
+                <a href="" class="list-group-item" ng-click="homeController.allUser">wszystko</a>
             </div>
             <!-- tylko jak nazwa uzytkownika jest zgodna wyszukuje-->
             <div ng-switch='homeController.selectedTab'>
@@ -24,5 +18,3 @@
             </div>
         </div>
     </div>
-    
-</html>

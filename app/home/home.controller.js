@@ -1,7 +1,6 @@
 export default class HomeController{
-    constructor($scope,$stateParams)
-    {
-        
+   constructor($scope,$stateParams)
+     {
             this.todos=[];
             this.user=$stateParams.user
             this.userText='';
@@ -13,14 +12,15 @@ export default class HomeController{
                 completed: false
             });
         }
-        onuser(){
+        onUser(){
             this.selectedTab='user';
         }
-        onall(){
+        onAll(){
             this.selectedTab='all';
         }
         remove(todo){
             var i=this.todos.indexOf(todo);
             this.todos.splice(i,1);
         }
-    }
+     }
+ 
