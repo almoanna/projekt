@@ -1,6 +1,6 @@
- export default function user() {
+export default function userInput() {
   return {
     restrict: 'E',
-    template: require('./user.html')
-  }
-}
+    template: require('./user_input.html')
+ }
+} 
