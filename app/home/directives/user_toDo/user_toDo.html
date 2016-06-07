@@ -1,1 +1,21 @@
-uzytkownik
+<section class="row">
+    <header> <!-- uruchomic funkcjie gdy fromularz jest skladany ng-submit-->
+        <form id="todo-form" ng-submit="homeController.addTodo()">
+        	<input id="new-todo" class="form-control"  ng-model="homeController.userText" ng-disabled="saving" />
+        </form>    
+    </header>    
+    
+    <section>
+        <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+            <ul id="todo-list" class="list-group">
+    						<li ng-repeat="homeController.todos" class="list-group-item">
+    								<input data-toggle="toggle" type="checkbox" ng-model="todo.value.completed" ng-change="toggleCompleted(todo)">
+    								<span ng-hide="todo.editing" ng-dblclick="homeController.editTodo(todo)">{{todo.value.title}}</span>
+    								<input ng-show="todo.editing" ng-model="todo.value.title" ng-blur="homeController.doneEditing(todo)" autofocus />
+    								<button class="destroy" ng-click="homeController.removeTodo(todo)"></button>
+    						</li> <!-- automatycznie przydzielac kontrole elemetowi data-toggle-->
+    						<!--ukrywanie sekcji po podwujnym kliknieciu ng-hide-->
+    		</ul>
+    </section>
+    
+</section>

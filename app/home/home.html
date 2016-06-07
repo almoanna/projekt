@@ -3,9 +3,14 @@
     
     <div>
         <div ng-show="homeController.user">
-        <div class="list-group">
-            <a href="" class="list-group-item" ng-click="homeController.selectedTab='user'"> {{homeController.user}} To Do</a>
-            <a href="" class="list-group-item" ng-click="homeController.selectedTab='all'"> All</a>
+            <br>
+            <br>
+            <br>
+            <div class="blockInner">
+        <div class="list-group col-md-6">
+            <a href="" class="list-group-item" ng-click="homeController.onuser"> {{homeController.user}} uzytkownik</a>
+            <a href="" class="list-group-item" ng-click="homeController.onall"> wszyscy</a>
+        </div>
         </div>
     </div>
         
