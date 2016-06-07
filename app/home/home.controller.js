@@ -1,17 +1,19 @@
+/*global Firebase */
 export default class HomeController{
-    constructor($scope,$stateParams){
-     this.todos = [];
+    constructor($scope,$stateParams,$firebaseObject, ToDoService){
+     //this.todos = [];
      this.user = $stateParams.user;
+     this.todos = ToDoService.getAll();
+     this.ToDoService = ToDoService;
+     this.editingToDo = null;
+    
     }
     addTodo(){
-     this.todos.push({
-    value:{
-        user: this.user,
-        title: this.userText,
-        completed:false
-        },
-    editing: false
-    });
+     this.ToDoService.add({
+               user: this.user,
+                title: this.userText,
+                completed:false
+            });
   }
     onuser(){
      this.selectedTab = 'user';
@@ -20,20 +22,19 @@ export default class HomeController{
        this.selectedTab = 'all';
     }
     removeTodo(toDo){
-     var i = this.todos.indexOf(toDo);
-     this.todos.splice(i,1);
+     this.ToDoService.remove(toDo);
      }
      editTodo(todo){
-        todo.editing = !todo.editing;
-        this.originalToDo = todo;
+        this.editingToDo = todo;
     }
     doneEditing(todo){
-         todo.editing = false;
-       console.log(todo.editing);
+         this.editingToDo = null;
+         this.ToDoService.edit(todo);
     }
     onChangeStatus(status){
     this.statusFilter = (status === 'active') ?
-	{ value:{completed: false }} : (status === 'completed') ?
-	{ value:{completed: true }} : {};
+    { completed: false } : (status === 'completed') ?
+	{ completed: true } : {};
+    
     }
-    } 
+} 
