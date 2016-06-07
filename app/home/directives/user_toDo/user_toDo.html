@@ -2,13 +2,21 @@
     <header> <!-- uruchomic funkcjie gdy fromularz jest skladany ng-submit-->
         <form id="todo-form" ng-submit="homeController.addTodo()">
         	<input id="new-todo" class="form-control"  ng-model="homeController.userText" ng-disabled="saving" />
+        	<ul id="filters">
+                <li>
+				<a ng-click="homeController.onChangeTab('user')">uzytkownik</a>
+				</li>
+				<li>
+				<a ng-click="homeController.onChangeTab('all')">wszyscy</a>
+				</li>
+             </ul>
         </form>    
     </header>    
     
     <section>
-         <li ng-repeat="homeController.todos | filter:homeController.statusFilter" class="list-group">
+         <li ng-repeat="homeController.todos | filter:homeController.statusFilter | filter:homeController.userFilter" class="list-group">
                 <div class="list-group-item">
-    				<input data-toggle="toggle" ng-show="todo.user == homeController.user" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+    				<input data-toggle="toggle" ng-show="todo.user == homeController.user" type="checkbox" ng-model="todo.completed" ng-change="homeController.doneEditing(todo)">
     				<span ng-hide="todo == homeController.editingToDo" ng-dblclick="homeController.editTodo(todo)">{{todo.title}}</span>
     				<form ng-submit="homeController.doneEditing(todo)">
     				<input ng-show="todo == homeController.editingToDo" ng-model="todo.title" ng-blur="homeController.doneEditing(todo)" autofocus />
