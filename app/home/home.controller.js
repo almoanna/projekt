@@ -1,6 +1,6 @@
 export default class HomeController{
-    constructor()
-    {
-     this.name = "HomeController";   
+    constructor($stateParams){
+        this.user = $stateParams.user
+
     }
-} 
+    } 

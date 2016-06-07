@@ -1,7 +1,7 @@
-<div class="col-md-8 "> <!-- szerokosc kolumny, szerokosc konteinera 970-->
+<div class="col-md-6"> <!-- szerokosc kolumny, szerokosc konteinera 970-->
     <div class="input-group input-group-lg"> <!-- wzgledna klasa grup-->
       <input 
-        ng-model="github.selectedUser" 
+        ng-model="homeController.selectedUser" 
         type="text" 
         class="form-control " 
         placeholder="Login"
@@ -9,9 +9,9 @@
         
       <span class="input-group-btn"> <!-- przyciski grup wejsciowych-->
         <button 
-          class="btn btn-info btn-md" 
+          class="btn btn-success btn-md" 
           type="button " 
-          ui-sref="github({user: github.selectedUser})">Wyszukaj!</button>
+          ui-sref="home({user: homeController.selectedUser})">Wyszukaj!</button>
       </span> <!-- typ przycisku i jego wielkosc btn btn-info-->
      
     </div>
