@@ -6,21 +6,26 @@
     </header>    
     
     <section>
-        <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
-             <li ng-repeat="homeController.todos">
+         <li ng-repeat="homeController.todos | filter:homeController.statusFilter" class="list-group">
+                <div class="list-group-item">
     				<input data-toggle="toggle" ng-show="todo.user == homeController.user" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
     				<span ng-hide="todo == homeController.editingToDo" ng-dblclick="homeController.editTodo(todo)">{{todo.title}}</span>
     				<form ng-submit="homeController.doneEditing(todo)">
     				<input ng-show="todo == homeController.editingToDo" ng-model="todo.title" ng-blur="homeController.doneEditing(todo)" autofocus />
     				</form>
-    				<span>{{todo.value.user}}</span>
+    				<span>{{todo.user}}</span>
     				<button class="destroy" ng-show="todo.user == homeController.user" ng-click="homeController.removeTodo(todo)">usun</button>
+    		</div>
     		 </li> <!-- automatycznie przydzielac kontrole elemetowi data-toggle-->
     		<!--ukrywanie sekcji po podwujnym kliknieciu ng-hide-->
     		<!--Dyrektywa mówi angularjs Co zrobić, gdy element HTML traci ostrość ng-blur-->
     </section>
     <footer> <!--stopka-->
+    <input id="toggle-all" ng-model="isAllMarked" type="checkbox" ng-click="homeController.markAll(isAllMarked)">
     <ul id="filters">
+         <li>
+			<a ng-click="homeController.clearAllCompleted()">wyczysc</a>
+		</li>
     	<li>
     	<a ng-click="homeController.onChangeStatus('')">wszysttkie</a>
     	</li>
