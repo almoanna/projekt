@@ -7,15 +7,28 @@
     
     <section>
         <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
-            <ul id="todo-list" class="list-group">
-    						<li ng-repeat="homeController.todos" class="list-group-item">
-    								<input data-toggle="toggle" type="checkbox" ng-model="todo.value.completed" ng-change="toggleCompleted(todo)">
-    								<span ng-hide="todo.editing" ng-dblclick="homeController.editTodo(todo)">{{todo.value.title}}</span>
-    								<input ng-show="todo.editing" ng-model="todo.value.title" ng-blur="homeController.doneEditing(todo)" autofocus />
-    								<button class="destroy" ng-click="homeController.removeTodo(todo)"></button>
-    						</li> <!-- automatycznie przydzielac kontrole elemetowi data-toggle-->
-    						<!--ukrywanie sekcji po podwujnym kliknieciu ng-hide-->
-    		</ul>
+             <li ng-repeat="homeController.todos | filter:homeController.statusFilter">
+    				<input data-toggle="toggle" type="checkbox" ng-model="todo.value.completed" ng-change="toggleCompleted(todo)">
+    				<span ng-hide="todo.editing" ng-dblclick="homeController.editTodo(todo)">{{todo.value.title}}</span>
+    				<form ng-submit="homeController.doneEditing(todo)">
+    				<input ng-show="todo.editing" ng-model="todo.value.title" ng-blur="homeController.doneEditing(todo)" autofocus />
+    				</form>
+    		 </li> <!-- automatycznie przydzielac kontrole elemetowi data-toggle-->
+    		<!--ukrywanie sekcji po podwujnym kliknieciu ng-hide-->
+    		<!--Dyrektywa mówi angularjs Co zrobić, gdy element HTML traci ostrość ng-blur-->
     </section>
+    <footer> <!--stopka-->
+    <ul id="filters">
+    	<li>
+    	<a ng-click="homeController.onChangeStatus('')">wszysttkie</a>
+    	</li>
+    	<li>
+		<a ng-click="homeController.onChangeStatus('active')">aktywne</a>
+		</li>
+		<li>
+		<a ng-click="homeController.onChangeStatus('completed')">zrobione</a>
+		</li>
+		</ul>
+</footer>
     
 </section>

@@ -1,8 +1,7 @@
 export default class HomeController{
     constructor($scope,$stateParams){
      this.todos = [];
-     this.user = $stateParams.user
-     this.userText = '';
+     this.user = $stateParams.user;
     }
     addTodo(){
      this.todos.push({
@@ -29,6 +28,12 @@ export default class HomeController{
         this.originalToDo = todo;
     }
     doneEditing(todo){
-        todo.editing = !todo.editing;
+         todo.editing = false;
+       console.log(todo.editing);
+    }
+    onChangeStatus(status){
+    this.statusFilter = (status === 'active') ?
+	{ value:{completed: false }} : (status === 'completed') ?
+	{ value:{completed: true }} : {};
     }
     } 
