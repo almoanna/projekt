@@ -5,5 +5,5 @@
        template: require('./home.html'),
        controller: 'HomeController',
        controllerAs: 'homeController'
-     })
+     });
  }

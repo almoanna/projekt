@@ -1,3 +1,4 @@
+
 <section class="row">
     <header> <!-- uruchomic funkcjie gdy fromularz jest skladany ng-submit-->
         <form id="todo-form" ng-submit="homeController.addTodo()">
@@ -14,7 +15,7 @@
     </header>    
     
     <section>
-         <li ng-repeat="homeController.todos | filter:homeController.statusFilter | filter:homeController.userFilter" class="list-group">
+         <li ng-repeat="todo in homeController.todos | filter:homeController.statusFilter | filter:homeController.userFilter" class="list-group">
                 <div class="list-group-item">
     				<input data-toggle="toggle" ng-show="todo.user == homeController.user" type="checkbox" ng-model="todo.completed" ng-change="homeController.doneEditing(todo)">
     				<span ng-hide="todo == homeController.editingToDo" ng-dblclick="homeController.editTodo(todo)">{{todo.title}}</span>
@@ -28,14 +29,15 @@
     		<!--ukrywanie sekcji po podwujnym kliknieciu ng-hide-->
     		<!--Dyrektywa mówi angularjs Co zrobić, gdy element HTML traci ostrość ng-blur-->
     </section>
-    <footer> <!--stopka-->
+   <section>
+       <p>
     <input id="toggle-all" ng-model="isAllMarked" type="checkbox" ng-click="homeController.markAll(isAllMarked)">
     <ul id="filters">
          <li>
 			<a ng-click="homeController.clearAllCompleted()">wyczysc</a>
 		</li>
     	<li>
-    	<a ng-click="homeController.onChangeStatus('')">wszysttkie</a>
+    	<a ng-click="homeController.onChangeStatus('')">wszystkie</a>
     	</li>
     	<li>
 		<a ng-click="homeController.onChangeStatus('active')">aktywne</a>
@@ -44,6 +46,7 @@
 		<a ng-click="homeController.onChangeStatus('completed')">zrobione</a>
 		</li>
 		</ul>
-</footer>
+		</p>
+</section>
     
 </section>

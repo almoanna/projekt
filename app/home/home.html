@@ -3,15 +3,13 @@
     
     <div>
         <div ng-show="homeController.user">
-            <br>
-            <br>
-            <br>
-            <div style="width:50% margin:0 auto">
+        
+            <!--<div style="width:50% margin:0 auto">-->
         <div class="list-group col-md-6">
-            <a href="" class="list-group-item" ng-click="homeController.onuser"> Tabs</a>
-            <a href="" class="list-group-item" ng-click="homeController.onall"> Statistics</a>
+            <a href="" class="list-group-item" ng-click="homeController.onuser()"> statusy</a>
+            <a href="" class="list-group-item" ng-click="homeController.onall()"> statystyki</a>
         </div>
-        </div>
+        
     </div>
         
             <div ng-switch='homeController.selectedTab'>

@@ -3,7 +3,7 @@
 export default class toDoService{
     constructor($firebaseArray){
        this.firebaseArray = $firebaseArray;
-        this.ref = new Firebase("https://projektangular.firebaseio.com/");
+        this.ref = new Firebase("https://angulartododb.firebaseio.com/");
         this.items = $firebaseArray(this.ref);
     }
     getAll(){
@@ -22,4 +22,4 @@ export default class toDoService{
     remove(ref){
         this.items.$remove(ref);
     }
-};
+}

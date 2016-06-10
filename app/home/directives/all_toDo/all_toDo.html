@@ -1,13 +1,14 @@
+
+<p><font color="green">
+<h2><i>moje</i></h2>
+<h3>Ilosc: {{homeController.userAll}}</h3>
+<h3>Kompletnych: {{homeController.userCompleted}}</h3>
+<h3>Niekompletnych {{homeController.userInCompleted}}</h3>
+</font></p>
 <p>
     <font color="green">
 <h2 ><i>Wszyscy uzytkownicy </i></h2>
-<h3>Length {{homeController.todos.length}}</h3>
-<h3>Completed {{(homeController.todos | filter : { completed: true }).length}}</h3>
-<h3>InCompleted {{(homeController.todos | filter : { completed: false }).length}}</h3>
-</font></p>
-<p><font color="green">
-<h2><i>moje</i></h2>
-<h3>Length {{homeController.userAll}}</h3>
-<h3>Completed {{homeController.userCompleted}}</h3>
-<h3>InCompleted {{homeController.userInCompleted}}</h3>
+<h3>Ilosc {{homeController.todos.length}}</h3>
+<h3>Kompletnych {{(homeController.todos | filter : { completed: true }).length}}</h3>
+<h3>Niekompletnych {{(homeController.todos | filter : { completed: false }).length}}</h3>
 </font></p>
